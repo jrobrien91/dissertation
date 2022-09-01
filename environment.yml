@@ -1,5 +1,5 @@
 # Basic environment for Py-ART.
-name: fortknox
+name: dissertation
 channels:
   - conda-forge
   - defaults
