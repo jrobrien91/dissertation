@@ -1,0 +1,23 @@
+# Basic environment for Py-ART.
+name: fortknox
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.9
+  - numpy
+  - scipy
+  - matplotlib
+  - netcdf4
+  - wradlib
+  - cartopy
+  - xarray
+  - plotly
+  - meshio
+  - jupyterlab
+  - numpy-stl
+  - pip
+  - pip:
+     - arm_pyart
+     - chart_studio
+     - dash-obj-in-3dmesh
