@@ -73,8 +73,11 @@ def violin_plot(obj,
     saw = np.where(obj['P3_module_flags'].data.compute() == 5)
     cl = np.where(obj['P3_module_flags'].data.compute() == 1)
     # Subset the Variable
-    nvar_saw = [x for x in obj[nvar][saw].data[:].compute() if np.isnan(x) == False ]
-    nvar_cl = [x for x in obj[nvar][cl].data[:].compute() if np.isnan(x) == False ]     
+    nvar_saw_list = [x for x in obj[nvar][saw].data[:].compute() if np.isnan(x) == False ]
+    nvar_cl_list = [x for x in obj[nvar][cl].data[:].compute() if np.isnan(x) == False ]  
+    # dump MVC
+    nvar_saw = [x for x in nvar_saw_list if x < 1e36]
+    nvar_cl  = [x for x in nvar_cl_list if x < 1e36]
     # Define all the tick labels for the plots
     tick_label = ['',
                   '2016 \n Sawtooth', 
@@ -93,7 +96,7 @@ def violin_plot(obj,
         npos = [5, 6]
     else:
         npos = [0, 7]
-    print(npos)
+    
     sc = axarr.violinplot(np.array(nvar_saw),
                        positions=[npos[0]],
                        vert=True,
@@ -131,8 +134,8 @@ def violin_plot(obj,
     # Set the title
     axarr.set_ylabel(ylabel)
     # Set the background color
-    axarr.axvspan(4.5, 7, color='lightskyblue', zorder=-1, alpha=0.75)
-    axarr.axvspan(2.5, 4.5, color='moccasin', zorder=-1, alpha=0.75)
+    axarr.axvspan(4.5, 7, color='lightblue', zorder=-1, alpha=0.4)
+    axarr.axvspan(2.5, 4.5, color='sandybrown', zorder=-1, alpha=0.4)
     # set ticks
     axarr.set_xticks([0, 1, 2, 3, 4, 5, 6])
     axarr.set_xticklabels(tick_label)
@@ -141,15 +144,15 @@ def violin_plot(obj,
 
     return axarr
 
-def main():
+def main(nvar='Mach_Number'):
     # locate all the ORACLES 2018 data
     file_list_2018 = sorted(glob.glob('/Users/jrobrien/Dissertation/data/oracles_merge/mrg1*2018*'))
     file_list_2017 = sorted(glob.glob('/Users/jrobrien/Dissertation/data/oracles_merge/mrg1*2017*'))
     file_list_2016 = sorted(glob.glob('/Users/jrobrien/Dissertation/data/oracles_merge/mrg1*2016*'))
     # read in all the ORACLES data
-    ds2018 = oracles_read(file_list_2018)
-    ds2017 = oracles_read(file_list_2017)
-    ds2016 = oracles_read(file_list_2016)
+    ds2018 = oracles_read(file_list_2018, nvar=nvar)
+    ds2017 = oracles_read(file_list_2017, nvar=nvar)
+    ds2016 = oracles_read(file_list_2016, nvar=nvar)
 
     # create the plot
     # Plot the Mach Number violin plot for 2018
@@ -157,20 +160,21 @@ def main():
 
     violin_plot(ds2016,
                 axarr,
-                year='2016')
+                year='2016',
+                nvar=nvar)
 
     violin_plot(ds2017,
                 axarr,
-                year='2017')
+                year='2017',
+                nvar=nvar)
 
     violin_plot(ds2018,
                 axarr,
-                year='2018')
+                year='2018',
+                nvar=nvar)
     
-    #plt.suptitle('ORACLES In-Situ Cloud Sampling')
-
 if __name__ == '__main__':
     # call the main function
-    main()
+    main(nvar='Static_Air_Temp')
 
 
