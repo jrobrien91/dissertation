@@ -6,7 +6,7 @@
 <desc>
 Creator: GL2PS 1.4.2, (C) 1999-2020 C. Geuzaine
 For: VTK
-CreationDate: Sun Jun  4 11:55:10 2023
+CreationDate: Wed Jul 26 18:16:34 2023
 </desc>
 <defs>
 </defs>
@@ -20,7 +20,7 @@ xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAABAAAAAMACAIAAAA12IJaAA
 <text fill="#000000" x="566.4" y="695.6" font-size="24" text-anchor="middle" dy="0" font-family="Helvetica">309</text>
 <text fill="#000000" x="680.6" y="695.6" font-size="24" text-anchor="middle" dy="0" font-family="Helvetica">313</text>
 <text fill="#000000" x="794.8" y="695.6" font-size="24" text-anchor="middle" dy="0" font-family="Helvetica">318</text>
-<text fill="#000000" x="511.8" y="650.6" font-size="26" text-anchor="middle" dy="26" font-family="Helvetica">Temperature [C]</text>
+<text fill="#000000" x="511.8" y="650.6" font-size="26" text-anchor="middle" dy="26" font-family="Helvetica">Temperature [K]</text>
 <text fill="#000000" x="416" y="635" font-size="16" text-anchor="start" dy="0" font-family="Helvetica-BoldItalic">Distance [m]</text>
 <text fill="#000000" x="193" y="616" font-size="16" text-anchor="start" dy="0" font-family="Helvetica-BoldItalic">0.00  </text>
 <text fill="#000000" x="294" y="616" font-size="16" text-anchor="start" dy="0" font-family="Helvetica-BoldItalic">2.00  </text>
