@@ -1,8 +1,13 @@
-# dissertation
-Material for my Dissertation
-
-Titled: 
-
+<p align="center">
 THE IMPACTS OF AIRBORNE CLOUD MICROPHSYICAL INSTRUMENTATION MOUNTING LOCATION ON 
 MEASUREMENTS MADE DURING THE OBSERVATIONS OF AEROSOLS AND CLOUDS AND THEIR INTERACTIONS 
 (ORACLES) PROJECT
+<p></p>
+
+&emsp;[ORACLES (ObseRvations of Aerosols above CLouds and their intEractionS)](https://espo.nasa.gov/ORACLES/content/ORACLES) was a five-year NASA investigation into the climate impacts of Southern Africa’s biomass burning aerosols. The University of North Dakota, in coordination with the Cooperative Institute for Severe and High-Impact Weather Research and Operations, the University of Oklahoma and University of Illinois at Urbana-Champaign integrated and operated a suite of in-situ cloud microphysical instrumentation into the NASA P-3 Orion aircraft to study aerosol-cloud interactions within this region. However, during the course of the individual ORACLES campaigns, the accuracy of the cloud microphysical observations uncertain due to the mounting location of instruments with respect to the aircraft wing. To address these concerns, an additional wing-mounted pylon design was created and was installed moving the instruments ahead of the leading edge of the aircraft wing in order to sample freestream conditions for ORACLES-2017 and ORACLES-2018. To study the impact of mounting location on cloud microphysical observations taken during ORACLES, a computational fluid dynamical analysis of the NASA P-3 Orion with both pylon designs is performed. Utilizing the OpenFOAM software package, a Eulerian-Lagrangian framework is utilized to simulate compressible flow with particle tracking around the aircraft, mounting locations, and instrumentation. Simulations of the predominant ORACLES vertical cloud sampling profiles, known as sawtooths, and multiple environmental factors are considered. Within the simulated Cloud Droplet Probe sample volume, the departure of the velocity field from freestream conditions was found to vary by up to twelve percent during sawtooth maneuvers for the NASA P-3 original pylon design. While the new pylon design did not achieve freestream conditions, it did minimize this distortion in flow caused by the sawtooth maneuvers, with a five percent difference in the departure of the velocity field from freestream between ascent and descent sawtooth profiles. Overall, the original NASA P-3 pylon design observed the closest velocities to freestream conditions across all simulations. 
+
+**Recommended Citation:** O'Brien, Joseph Robert, "The Impacts Of Airborne Cloud Microphysical Instrumentation Mounting Location On Measurements Made During The Observations Of Aerosols And Clouds And Their Interactions (ORACLES) Project" (2023). Theses and Dissertations. 5322.
+https://commons.und.edu/theses/5322
+
+**Associated Datasets:** O'Brien et al. (2024): Combined Cloud Microphysics Dataset for ORACLES. NASA ESPO ORACLES Archive. https://espo.nasa.gov/ORACLES/archive/browse/oracles/P3/Microphysics
+
