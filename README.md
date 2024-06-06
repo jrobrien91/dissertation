@@ -9,5 +9,5 @@ MEASUREMENTS MADE DURING THE OBSERVATIONS OF AEROSOLS AND CLOUDS AND THEIR INTER
 **Recommended Citation:** O'Brien, Joseph Robert, "The Impacts Of Airborne Cloud Microphysical Instrumentation Mounting Location On Measurements Made During The Observations Of Aerosols And Clouds And Their Interactions (ORACLES) Project" (2023). Theses and Dissertations. 5322.
 https://commons.und.edu/theses/5322
 
-**Associated Datasets:** O'Brien et al. (2024): Combined Cloud Microphysics Dataset for ORACLES. NASA ESPO ORACLES Archive. https://espo.nasa.gov/ORACLES/archive/browse/oracles/P3/Microphysics
+**Associated Datasets:** O'Brien et al. (2020): Combined Cloud Microphysics Dataset for ORACLES. NASA ESPO ORACLES Archive. https://espo.nasa.gov/ORACLES/archive/browse/oracles/P3/Microphysics
 
