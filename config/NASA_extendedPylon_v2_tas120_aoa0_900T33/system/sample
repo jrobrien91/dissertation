@@ -1,0 +1,72 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+  =========                 |
+  \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox
+   \\    /   O peration     | Website:  https://openfoam.org
+    \\  /    A nd           | Version:  7
+     \\/     M anipulation  |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    class       dictionary;
+    location    "system";
+    object      sample;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+type surfaces
+libs            ("libsampling.so");
+
+interpolationScheme cellPoint;
+
+surfaceFormat       vtk;
+
+fields
+(
+	U
+	T
+	p
+);
+
+surfaces
+(
+    fuselage
+    {
+        type    	plane;
+	planeType	pointAndNormal;
+	pointAndNormalDict
+	{
+		basePoint 	(0 0 0.0);
+		normalVector	(0 0 1);
+	}
+	triangulate	false; 
+    }
+    
+    cloudProbe
+    {
+        type    	plane;
+	planeType	pointAndNormal;
+	pointAndNormalDict
+	{
+		basePoint 	(13.85 2.72 13.75);
+		normalVector	(0 0 1);
+	}
+	triangulate	false; 
+    }
+    
+    alongWing
+    {
+        type    	plane;
+	planeType	pointAndNormal;
+	pointAndNormalDict
+	{
+		basePoint 	(14 3.5 0.0);
+		normalVector	(1 0 0);
+	}
+	triangulate	false; 
+    }
+);
+
+
+// ************************************************************************* //
