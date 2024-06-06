@@ -1,0 +1,1 @@
+## openFOAM configuration files

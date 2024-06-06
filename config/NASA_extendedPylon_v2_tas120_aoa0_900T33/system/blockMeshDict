@@ -1,0 +1,115 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+  =========                 |
+  \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox
+   \\    /   O peration     | Website:  https://openfoam.org
+    \\  /    A nd           | Version:  7
+     \\/     M anipulation  |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    class       dictionary;
+    object      blockMeshDict;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+domain
+{
+    // Hex A
+    xMin  -150;
+    xMax    50;
+    yMin  -100;
+    yMax   100;
+    zMin  -100;
+    zMax   100;
+
+    // Number of cells 
+    //zCells  20; // aerofoil to far field
+    //xCells  30; // sum of previous spots
+    //yCells  20;  // adding the dimension
+    zCells  200; // aerofoil to far field
+    xCells  200; // sum of previous spots
+    yCells  200;  // adding the dimension
+
+    // Mesh grading
+    zGrading    40;  // aerofoil to far field
+    xUGrading   5;   // towards centre upstream
+    leadGrading 0.2; // towards leading edge
+    xDGrading   10;  // downstream
+}
+
+vertices
+(
+	// Hex A
+	($domain.xMin $domain.yMin $domain.zMin) // vertice 0 
+	($domain.xMax $domain.yMin $domain.zMin) // vertice 1
+	($domain.xMax $domain.yMax $domain.zMin) // vertice 2
+	($domain.xMin $domain.yMax $domain.zMin) // vertice 3
+	($domain.xMin $domain.yMin $domain.zMax) // vertice 4
+	($domain.xMax $domain.yMin $domain.zMax) // vertice 5
+	($domain.xMax $domain.yMax $domain.zMax) // vertice 6
+	($domain.xMin $domain.yMax $domain.zMax) // vertice 7
+);
+
+blocks
+(
+    hex (0 1  2  3  4  5  6  7) ($domain.xCells $domain.yCells $domain.zCells) simpleGrading (1 1 1)
+);
+
+edges
+(
+);
+
+boundary
+(
+    inlet
+    {
+        type patch;
+        inGroups (freestream);
+        faces
+        (
+            // Hex A		
+            (0  4  7  3)
+        );
+    }
+
+    outlet
+    {
+        type patch;
+        inGroups (freestream);
+        faces
+        (
+	    // Hex B
+	    (1 5 6 2)
+        );
+    }
+
+    frontAndBack
+    {
+        type patch;
+	inGroups (freestream);
+        faces
+        (
+	    // front
+            (0 4  5  1)
+	    // back
+            (3 7  6  2)
+	);
+    }
+
+    topAndBottom
+    {
+        type patch;
+	inGroups (freestream);
+        faces
+        (
+	    // top
+	    (4 7  6  5)
+   	    // bottom
+	    (0 3 2 1)
+        );
+    }
+);
+
+// ************************************************************************* //
